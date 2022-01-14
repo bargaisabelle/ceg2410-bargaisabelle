@@ -49,9 +49,13 @@ This guide includes essential commands for bash/ sh shells, their definitions, a
 ## Shortcuts and symbols
 
 - `~`
+  - used with cd to go to home directory
 - `..`
+  - used with cd backup one directory or go to parent directory
 - `.`
+  - shows the current directory with cd
 - `!!`
+  - used to repeat a command without having to retype the entire command, useful for fixing typos
 
 ## Resources
 
