@@ -8,6 +8,8 @@ This guide includes essential commands for bash/ sh shells, their definitions, a
   - `man` followed by another command will show the `man`ual page for the given command, which can include what it does, options / flags for the command, and sometime sample usage.
   - `man ssh`
 - `help`
+  - can be used to find more information on builtin commands
+  - `help help`
 - `history`
   - displays a list of all past commands.
   - `history | grep "ssh"`
