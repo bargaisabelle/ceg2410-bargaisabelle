@@ -9,17 +9,40 @@ This guide includes essential commands for bash/ sh shells, their definitions, a
   - `man ssh`
 - `help`
 - `history`
+  - displays a list of all past commands.
+  - `history | grep "ssh"`
 - `cd`
+  - cd stands for change directory
+  - `cd home/`
 - `ls`
+  - allows you to list directory contents, like folders and directories
+  - `ls -lah`
 - `pwd`
+  - allows you to print the name of current/working directory
 - `cat`
+  - allows you to concatenate files or prints the contents of the file without having to enter the file
+  - `cat file.txt`
 - `vim`
+  - vim is a text editor, allows you to create a file and enter it in one command
+  - `vim file.txt`
 - `mkdir`
+  - allows you create a directory
+  - mkdir project1`
 - `sudo`
+  - allows you to execute commands as another/authorized user. Used to 'override.'
+  - `sudo !!'
 - `chmod`
+  - allows you to change permissions for a file (or the mode)
+  - `chmod u+rwx file.txt`
 - `chown`
+  - allows you to change ownership of a file 
+  - `chown barga file.txt`
 - `chgrp`
+  - allows you to change the group ownership of a file
+  - `chgrp students file.txt`
 - `ssh`
+  - allows you to login to a remote machine and execute commands
+  - `ssh -i /file/path/key ubuntu@ip`
 
 ## Shortcuts and symbols
 
