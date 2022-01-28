@@ -1,0 +1,21 @@
+#! /bin/bash
+
+echo "Installing vim colorsheme..."
+
+if [[ -d ~/.vim/colors ]]
+then
+        echo  "the directory already exists"
+else
+	echo "creating directory"
+	mkdir -p ~/.vim/colors	
+fi
+
+
+#download jellybeans.vim to ~/.vim/colors
+
+#check if jellybeans.vim exists
+wget -q -P ~/.vim/colors "https://raw.githubusercontent.com/nanotech/jellybeans.vim/master/colors/jellybeans.vim"
+
+echo "colorscheme jellybeans" > ~/.vimrc
+
+echo "colorscheme installed, open a file in vim to see!"
