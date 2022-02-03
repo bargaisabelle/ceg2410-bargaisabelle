@@ -1,0 +1,75 @@
+#! /bin/bash
+add-single() {
+
+        read -p "Enter your username: " username
+        echo "You entered $username"
+        read -p "Please enter a password: " password
+
+        if egrep "^$username" /etc/passwd
+        then
+                echo "Oops! This username already has an account."
+
+        else
+                echo "Creating account with username $username"
+                useradd -m -p "$password" "$username"
+                echo "$username has been added to the system!"
+
+
+        fi
+echo "Adding $username to group org"
+usermod -a -G org $username
+chgrp -R org /home/$username
+chmod g+ws /home/$username
+echo "Sending account info to newuser-account.txt"
+echo -e "Username: $username \nPassword: $password" > newuser-account.txt
+}
+
+#found these link helpful:
+#https://www.cyberciti.biz/tips/howto-write-shell-script-to-add-user.html
+#https://www.cyberciti.biz/faq/unix-howto-read-line-by-line-from-file/
+
+remove-single() {
+	read -p "Enter the username of the account you would like to remove: " userdelete
+	
+	gpasswd -d $userdelete org >> /dev/null
+	deluser --remove-home -quiet $userdelete
+	echo "$userdelete has been deleted!"
+}
+
+add-bulk() {
+	rm bulkuser-account.txt >> /dev/null
+	read -p "Enter a filename containing the usernames of accounts you would like to create: " filename
+	while read -r userline
+	do
+		if egrep "^$userline" /etc/passwd
+        	then
+                	echo "Oops! This username already has an account."
+        	else
+               		useradd -m -p "$userline" "$userline"
+                	echo "$userline has been added to the system!"
+        	fi
+		
+		echo "Adding $userline to group org"
+		usermod -a -G org $userline
+		chgrp -R org /home/$userline
+		chmod g+ws /home/$userline
+		echo -e "Username: $userline \nPassword: $userline" >> bulkuser-account.txt
+	done < "$filename"
+echo "Account info sent to bulkuser-account.txt"
+}
+
+
+remove-bulk() {
+	read -p "Enter a filename containing the usernames of accounts you would like to remove: " removefile
+	while read -r removeuser
+	do
+		gpasswd -d $removeuser org >> /dev/null
+		deluser --remove-home -quiet $removeuser
+        	echo "$removeuser has been deleted!"
+	done < "$removefile"
+}
+
+add-single
+remove-single
+add-bulk
+remove-bulk
