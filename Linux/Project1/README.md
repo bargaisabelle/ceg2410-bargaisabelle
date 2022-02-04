@@ -42,4 +42,4 @@ If you select the fourth option
 - it removes the user from the group, org
 - then deletes the user account and home directory
 
-![script 4 output](script4proof.png])
+![script 4 output](script4proof.png)
