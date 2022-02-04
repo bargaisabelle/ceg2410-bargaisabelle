@@ -4,6 +4,7 @@ Script: usermgmt
 This script can add a single user, remove a single user, add multiple users from a file, and remove multiple users from a file.
 
 What it does:
+
 When you run the script, a menu will appear with 4 options. Each number corresponds to one of the 4 functions in the script. 1 = add single user, 2 = remove single user, 3 = add bulk users, and 4 = remove bulk users.
 
 How to run:
