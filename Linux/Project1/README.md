@@ -14,6 +14,7 @@ If you select the first option
 - then, the username and password will be redirected to newuser-account.txt
 
 ![script 1 output](script1proof.png)
+![newuser-account.txt output](output1proof.png)
 
 If you select the second option
 - you will be prompted to enter a username
@@ -33,6 +34,7 @@ If you select the third option
 - lastly, each username and password will be outputted to bulkuser-account.txt
 
 ![script 3 output](script3proof.png)
+![bulkuser-account.txt output](output2proof.png)
 
 If you select the fourth option
 - you will be prompted to enter a filename (file requirements below)
