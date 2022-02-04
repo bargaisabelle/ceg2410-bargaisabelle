@@ -13,10 +13,14 @@ If you select the first option
 - all accounts will be given group permissions to the user's home directory
 - then, the username and password will be redirected to newuser-account.txt
 
+![script 1 output](script1proof.png]
+
 If you select the second option
 - you will be prompted to enter a username
 - the user will be removed from the group, org
 - the user's home directory and account will be deleted
+
+![script 2 output](script2proof.png]
 
 If you select the third option
 - you will be prompted to enter a filename (file requirements below)
@@ -28,6 +32,8 @@ If you select the third option
 - and given group permissions to access the user's home directory
 - lastly, each username and password will be outputted to bulkuser-account.txt
 
+![script 3 output](script3proof.png]
+
 If you select the fourth option
 - you will be prompted to enter a filename (file requirements below)
 	- this file must have one user per line
@@ -35,3 +41,5 @@ If you select the fourth option
 - the script will remove user's line by line
 - it removes the user from the group, org
 - then deletes the user account and home directory
+
+![script 4 output](script4proof.png]
