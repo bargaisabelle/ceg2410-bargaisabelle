@@ -1,0 +1,18 @@
+---
+- name: Ansible playbook to create user
+  hosts: linux
+
+
+  remote_user: ubuntu
+  tasks:
+
+          
+  
+    - name: Add the user 'Isabelle Barga' with a specific uid and a primary group of 'devs'
+      ansible.builtin.user:
+        name: bargaisabelle
+        comment: IsabelleBarga
+        uid: 5265
+        group: devs
+        createhome: yes
+        home: /home/kduncan

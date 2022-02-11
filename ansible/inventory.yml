@@ -1,0 +1,17 @@
+---
+
+linux:
+  hosts:
+    aws-ubuntu:
+      ansible_host: 44.196.162.102
+      ansible_user: ubuntu
+  vars:
+    ansible_ssh_private_key_file: /home/bargaisabelle/.ssh/ceg2410.pem
+
+windows:
+  hosts:
+
+allsystems:
+  children:
+    linux:
+    windows:
