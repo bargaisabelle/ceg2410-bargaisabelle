@@ -16,3 +16,10 @@
         group: devs
         createhome: yes
         home: /home/kduncan
+
+    - name: creating / checking group 'devs' existence
+      group:
+        name: devs
+        gid: 2042
+        state: present
+        
