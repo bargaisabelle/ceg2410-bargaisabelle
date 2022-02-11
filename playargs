@@ -1,0 +1,17 @@
+#!/bin/bash
+
+func-args () {
+	echo "Output from function $1"
+}
+
+func-args $1 #calls the function
+
+read foo 
+echo "$foo"
+
+func-args $foo
+
+echo "arg 1 $1"
+echo "arg 2 $2"
+echo "All args $@"
+echo "Number of args $#"

@@ -1,21 +1,48 @@
+
 #! /bin/bash
 
-echo "Installing vim colorsheme..."
 
-if [[ -d ~/.vim/colors ]]
-then
-        echo  "the directory already exists"
-else
-	echo "creating directory"
-	mkdir -p ~/.vim/colors	
-fi
+install-packages () {
+	echo "installing packages"
+
+	#check for sudo
+	echo "User ID running this script is $EUID with username $(whoami) or ENV var $USER"
+	if [[ $EUID -eq 0 ]]
+	then
+		
+		#instals multiple packages in one line
+		#-y automatically answers yes when asked if you are sure you want to download
+		sudo apt install -y git cowsay fortune
+		#can also write like sudo apt intall /
+		#				cowsay /
+		#				fortune /
+	else
+		echo "install packages must be run as root"
+	fi
+}
+
+install-colorscheme() {
+	echo "Installing vim colorsheme..."
+	# TODO:
+
+	if [[ -d ~/.vim/colors ]]
+	then
+        	echo  "the directory already exists"
+	else
+		echo "creating directory"
+		mkdir -p ~/.vim/colors	
+	fi
 
 
-#download jellybeans.vim to ~/.vim/colors
+	#download jellybeans.vim to ~/.vim/colors
 
-#check if jellybeans.vim exists
-wget -q -P ~/.vim/colors "https://raw.githubusercontent.com/nanotech/jellybeans.vim/master/colors/jellybeans.vim"
+	#check if jellybeans.vim exists
+	wget -q -P ~/.vim/colors "https://raw.githubusercontent.com/nanotech/jellybeans.vim/master/colors/jellybeans.vim"
+	echo "colorscheme jellybeans" > ~/.vimrc
 
-echo "colorscheme jellybeans" > ~/.vimrc
+	echo "colorscheme installed, open a file in vim to see!"
+}
 
-echo "colorscheme installed, open a file in vim to see!"
+echo "Hello from installation script"
+install-colorscheme
+install-packages

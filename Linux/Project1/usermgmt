@@ -1,0 +1,121 @@
+#! /bin/bash
+
+#this script allows the user to add a sinlge user to the system
+add-single() {
+	
+	#user enters username and password of user they would like to create
+        read -p "Enter your username: " username
+        echo "You entered $username"
+        read -p "Please enter a password: " password
+
+	#if the user already exits
+        if egrep "^$username" /etc/passwd
+        then
+		#then do not create a new account
+                echo "Oops! This username already has an account."
+
+        else	
+		#if the user does not exist, add user to the system
+                echo "Creating account with username $username"
+                useradd -m -p "$password" "$username"
+                echo "$username has been added to the system!"
+
+        fi
+
+#add the user entered to the group org
+echo "Adding $username to group org"
+usermod -a -G org $username
+chgrp -R org /home/$username
+
+#gives the group permissions to the user's home directory
+chmod g+ws /home/$username
+
+#sends username and password to a text file
+echo "Sending account info to newuser-account.txt"
+echo -e "Username: $username \nPassword: $password" > newuser-account.txt
+}
+
+
+#allows the user to remove a single user from the system
+remove-single() {
+	read -p "Enter the username of the account you would like to remove: " userdelete
+	
+	#removes user from group
+	gpasswd -d $userdelete org >> /dev/null
+	
+	#quielty deletes user and home directory
+	deluser --remove-home -quiet $userdelete
+	echo "$userdelete has been deleted!"
+}
+
+
+#this script allows multiple accounts to be added at once
+add-bulk() {
+	#removes the text file that holds all user's info
+	#only holds user info from the most recent time the script was run
+	rm bulkuser-account.txt >> /dev/null
+	read -p "Enter a filename containing the usernames of accounts you would like to create: " filename
+
+	#while reading each line of the file
+	while read -r userline
+	do
+		#checks for account duplicates
+		if egrep "^$userline" /etc/passwd
+        	then
+                	echo "Oops! This username already has an account."
+        	else
+			#else creates user account
+               		useradd -m -p "$userline" "$userline"
+                	echo "$userline has been added to the system!"
+        	fi
+		#adds users to group org
+		echo "Adding $userline to group org"
+		usermod -a -G org $userline
+		chgrp -R org /home/$userline
+		
+		#changes group permissions to access user's home directory
+		chmod g+ws /home/$userline
+
+		#outputs usernames and passwords to text file
+		echo -e "Username: $userline \nPassword: $userline" >> bulkuser-account.txt
+	done < "$filename"
+echo "Account info sent to bulkuser-account.txt"
+}
+
+
+#this function removes multiple users from the system at once
+remove-bulk() {
+	read -p "Enter a filename containing the usernames of accounts you would like to remove: " removefile
+
+	#while reading each line of the script
+	while read -r removeuser
+	do
+		#remove the user from the group
+		gpasswd -d $removeuser org >> /dev/null
+
+		#quielty delete the users home directory and account
+		deluser --remove-home -quiet $removeuser
+        	echo "$removeuser has been deleted!"
+	done < "$removefile"
+}
+
+#This is the menu that allows the user to select which function they would like to run
+echo "What would you like to do? "
+echo -ne "
+1) add-single user
+2) remove-single user
+3) add-bulk users
+4) remove-bulk users
+Choose a number: "
+read a
+case $a in
+"1") add-single ;;
+"2") remove-single ;;
+"3") add-bulk ;;
+"4") remove-bulk ;;
+esac
+
+#found these links helpful:
+#https://www.cyberciti.biz/tips/howto-write-shell-script-to-add-user.html
+#https://www.cyberciti.biz/faq/unix-howto-read-line-by-line-from-file/
+#https://devdojo.com/bobbyiliev/how-to-create-an-interactive-menu-in-bash
