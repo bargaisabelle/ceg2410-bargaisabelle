@@ -6,6 +6,12 @@ Boss has a meeting in 24 hours and needs a system operational and all data on th
 
 What would you do?
 
+I would start with the least aggressive route by checking the insides of the computer and making sure
+nothing is interfering withh fans or causing the noise. I think the easiest plan of action is to have an 
+external drive and clone all of the data into that. Then obtain a replacement drive and configure and 
+initialize the partition table, poartitions, and filesystem to hold the data and copy it back to the
+new drive.
+
 Responses should include:
 - Additional details you would like
   - Is the system still performing as it should/how it normally does? 
