@@ -21,5 +21,14 @@ command to check RAID status: cat /proc/mdstat
 
 ![raid status](images/raidpart2.png)
 
-This shows the name of the array, md0, the type of array, RAID 5, and the state, active.
+  - Personalities are the RAID level that your(my) kernel can support.
+  - The second line shows the name of the array, md0, the type of array, RAID 5, the state, active, and the 
+    component devices used to build the array. The numbers in the brackets describe the role of the device in 
+    the array.
+  - The next line gives the number of blocks provided by the devices, 8378368, the metadata version, 1.2, and 
+    the chunk size of the array, 512k. The first number in the following brack shows the size of the array and
+    the second number shows the currently available number of devices. Lastly, the U represents healthy devices.
+  - Unused devices = none because there are no devices not in use by an array
+
+## Part 3
 
