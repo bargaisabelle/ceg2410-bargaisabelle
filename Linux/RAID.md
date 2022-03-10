@@ -35,7 +35,8 @@ command to check RAID status: cat /proc/mdstat
 command to create a filesystem: sudo mkfs.ext4 /dev/md0
 command to mount device to folder(raiddata): sudo mount /dev/md0 /mnt/raiddata
 command that verifies device is mounted: lsblk
-![lsblk output](mountraid.png)
+
+![lsblk output](images/mountraid.png)
 
 ## Part 4
 
