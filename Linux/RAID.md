@@ -19,7 +19,7 @@ Command to build: sudo mdadm --create --verbose /dev/md0 --level=5 --raid-device
 
 command to check RAID status: cat /proc/mdstat
 
-![raid status](/images/raidpart2.png)
+![raid status](images/raidpart2.png)
 
 This shows the name of the array, md0, the type of array, RAID 5, and the state, active.
 
