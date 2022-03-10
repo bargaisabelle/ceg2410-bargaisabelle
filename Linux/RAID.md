@@ -21,7 +21,7 @@ command to check RAID status: cat /proc/mdstat
 
 ![raid status](images/raidpart2.png)
 
-  - Personalities are the RAID level that your(my) kernel can support.
+  - Personalities are the RAID levels that your(my) kernel can support.
   - The second line shows the name of the array, md0, the type of array, RAID 5, the state, active, and the 
     component devices used to build the array. The numbers in the brackets describe the role of the device in 
     the array.
@@ -31,4 +31,11 @@ command to check RAID status: cat /proc/mdstat
   - Unused devices = none because there are no devices not in use by an array
 
 ## Part 3
+
+command to create a filesystem: sudo mkfs.ext4 /dev/md0
+command to mount device to folder(raiddata): sudo mount /dev/md0 /mnt/raiddata
+command that verifies device is mounted: lsblk
+![lsblk output](mountraid.png)
+
+## Part 4
 
