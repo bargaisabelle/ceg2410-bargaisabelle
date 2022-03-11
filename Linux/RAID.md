@@ -44,11 +44,11 @@ command to mark a disk as failing: mdadm --manage /dev/md127 --fail /dev/xvdf
 command to remove failing disk: mdadm --manage /dev/md127 --remove /dev/xvdf
   - xvdf is no longer part of the md127
 
-![mdadm remove output](removeraid.png)
+![mdadm remove output](images/removeraid.png)
 
 ## Part 5
 
 command to add new device to RAID: sudo mdadm /dev/md127 --add /dev/xvdh
 using cat /proc/mdstat and mdadm --detail /dev/md127 can show that is is being rebuilt
 
-![rebuilt array](rebuiltraid.png)
+![rebuilt array](images/rebuiltraid.png)
