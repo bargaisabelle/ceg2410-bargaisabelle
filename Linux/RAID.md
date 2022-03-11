@@ -42,7 +42,7 @@ command to check RAID status: cat /proc/mdstat
 
   - command to mark a disk as failing: mdadm --manage /dev/md127 --fail /dev/xvdf
   - command to remove failing disk: mdadm --manage /dev/md127 --remove /dev/xvdf
-  - xvdf is no longer part of the md127
+  - effect: xvdf is no longer part of the md127
 
 ![mdadm remove output](images/removeraid.png)
 
