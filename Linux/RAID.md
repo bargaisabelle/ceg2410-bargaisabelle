@@ -32,23 +32,23 @@ command to check RAID status: cat /proc/mdstat
 
 ## Part 3
 
-command to create a filesystem: sudo mkfs.ext4 /dev/md0
-command to mount device to folder(raiddata): sudo mount /dev/md0 /mnt/raiddata
-command that verifies device is mounted: lsblk
+  - command to create a filesystem: sudo mkfs.ext4 /dev/md0
+  - command to mount device to folder(raiddata): sudo mount /dev/md0 /mnt/raiddata
+  - command that verifies device is mounted: lsblk
 
 ![lsblk output](images/mountraid.png)
 
 ## Part 4
 
-command to mark a disk as failing: mdadm --manage /dev/md127 --fail /dev/xvdf
-command to remove failing disk: mdadm --manage /dev/md127 --remove /dev/xvdf
+  - command to mark a disk as failing: mdadm --manage /dev/md127 --fail /dev/xvdf
+  - command to remove failing disk: mdadm --manage /dev/md127 --remove /dev/xvdf
   - xvdf is no longer part of the md127
 
 ![mdadm remove output](images/removeraid.png)
 
 ## Part 5
 
-command to add new device to RAID: sudo mdadm /dev/md127 --add /dev/xvdh
-using cat /proc/mdstat and mdadm --detail /dev/md127 can show that is is being rebuilt
+  - command to add new device to RAID: sudo mdadm /dev/md127 --add /dev/xvdh
+  - using cat /proc/mdstat and mdadm --detail /dev/md127 can show that is is being rebuilt
 
 ![rebuilt array](images/rebuiltraid.png)
