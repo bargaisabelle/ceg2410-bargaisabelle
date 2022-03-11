@@ -48,3 +48,7 @@ command to remove failing disk: mdadm --manage /dev/md127 --remove /dev/xvdf
 
 ## Part 5
 
+command to add new device to RAID: sudo mdadm /dev/md127 --add /dev/xvdh
+using cat /proc/mdstat and mdadm --detail /dev/md127 can show that is is being rebuilt
+
+![rebuilt array](rebuiltraid.png)
