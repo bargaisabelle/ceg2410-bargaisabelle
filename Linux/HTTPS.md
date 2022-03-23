@@ -24,11 +24,19 @@
 
 ## Part 3
    - Enabling the service to use HTTPS
+     - <VirtualHost *:443>
    - Configuration changes to set:
      - the location of the public and private files of the certificate
      - serving content over HTTPS
      - redirect HTTP requests to HTTPS
    - Restarting the service after the config changes
+     - sudo systemctl restart apache2
    - Proving that the changes work
      - Think, "What are you doing to test?"
    - **screenshot** of site working with HTTPS
+
+
+Sources:
+  - https://techexpert.tips/apache/enable-https-apache/
+  - https://askubuntu.com/questions/629995/apache-not-able-to-restart
+  - https://stackoverflow.com/questions/10144634/htaccess-invalid-command-rewriteengine-perhaps-misspelled-or-defined-by-a-m
