@@ -41,9 +41,7 @@
         SSLCertificateKeyFile /etc/apache2/ssl/apache2.key
 </VirtualHost>
 ```
-
-     - redirect HTTP requests to HTTPS
-     
+   - redirect HTTP requests to HTTPS
 ```
 <VirtualHost *:80>
         RewriteEngine On
