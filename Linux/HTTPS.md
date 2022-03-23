@@ -28,13 +28,7 @@
    - Configuration changes to set:
      - the location of the public and private files of the certificate
      - serving content over HTTPS
-     - redirect HTTP requests to HTTPS
 ```
-<VirtualHost *:80>
-        RewriteEngine On
-        RewriteCond %{HTTPS} !=on
-        RewriteRule ^/?(.*) https://%{SERVER_NAME}/$1 [R=301,L]
-</virtualhost>
 <VirtualHost *:443>
         ServerAdmin webmaster@localhost
         DocumentRoot /var/www/html
@@ -46,6 +40,16 @@
         SSLCertificateFile /etc/apache2/ssl/apache2.crt
         SSLCertificateKeyFile /etc/apache2/ssl/apache2.key
 </VirtualHost>
+```
+
+     - redirect HTTP requests to HTTPS
+     
+```
+<VirtualHost *:80>
+        RewriteEngine On
+        RewriteCond %{HTTPS} !=on
+        RewriteRule ^/?(.*) https://%{SERVER_NAME}/$1 [R=301,L]
+</virtualhost>
 ```
    - Restarting the service after the config changes
      - sudo systemctl restart apache2
