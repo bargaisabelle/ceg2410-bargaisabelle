@@ -27,6 +27,8 @@
      - <VirtualHost *:443>
    - Configuration changes to set:
      - the location of the public and private files of the certificate
+       - /etc/ssl/certs
+       - /etc/ssl/private
      - serving content over HTTPS
 ```
 <VirtualHost *:443>
@@ -52,7 +54,7 @@
    - Restarting the service after the config changes
      - sudo systemctl restart apache2
    - Proving that the changes work
-     - Think, "What are you doing to test?"
+     - In the URL address, it says https instead of http, which means that the site is secured using an TLS/SSL certificate
    - **screenshot** of site working with HTTPS
 
 ![https screenshot](images/server2.png)
