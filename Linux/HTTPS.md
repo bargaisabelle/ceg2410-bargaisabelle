@@ -7,8 +7,7 @@
    - where site content exists
      - /var/www/html/index.html
    - any special configurations you did
-     - changed permissions?
-     - changed default locations for where content is served?
+     - I didn't do any special configurations or permissions
    - **screenshot** of your content being served (default content will not get credit)
 
 ![server screenshot](images/server.png)
@@ -16,7 +15,7 @@
 ## Part 2
    - How to generate a certificate
      - sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/apache2/ssl/apache.key -out /etc/apache2/ssl/apache.crt
-     - (must create ssl directory, apache.key, and apache.crt beforehand)
+     - (must create ssl directory, apache.key file, and apache.crt file beforehand)
    - Location for certs on system
      - /etc/apache2/ssl/apache.crt
    - Any file permissions that need to be noted for the cert
