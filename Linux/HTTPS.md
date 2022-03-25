@@ -23,7 +23,9 @@
 
 ## Part 3
    - Enabling the service to use HTTPS
-     - <VirtualHost *:443>
+     - sudo a2enmod ssl
+     - sudo a2ensite default-ssl.conf
+     - sudo a2enmod rewrite (for rewrite method below)
    - Configuration changes to set:
      - the location of the public and private files of the certificate
        - /etc/ssl/certs
