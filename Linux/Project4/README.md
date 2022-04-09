@@ -35,8 +35,8 @@ foreach {
 ```
 Command line to add the users from .csv file:
   - Run the script:
-  - .\bulk.add.ps1 (or .\Desktop\bull.add.ps1 - depending on where the command line is writing to, mine is saved in desktop)
+  - ```.\bulk.add.ps1``` (or .\Desktop\bull.add.ps1 - depending on where the command line is writing to, mine is saved in desktop)
 
 To check if the users were created
   - you can simply search their name with this command:
-  - Get-ADUser -Identity agrant
+  - ```Get-ADUser -Identity agrant```
