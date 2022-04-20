@@ -1,6 +1,6 @@
 $secpass = Read-Host "Enter a password for all users" -AsSecureString
 
-Import-Csv .\Desktop\new.users.csv |
+Import-Csv .\Windows\new.users.csv |
 foreach {
     $name = "$($_.FirstName) $($_.LastName)"
 
