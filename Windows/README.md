@@ -20,3 +20,12 @@
 
 ![ous](images/ou.png)
 
+## Joining Users
+
+![engineers users](images/eng.png)
+
+![developers users](images/dev.png)
+
+![finance users](images/fin.png)
+
+![Hr users](images/hr.png)
