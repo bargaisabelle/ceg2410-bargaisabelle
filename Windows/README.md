@@ -16,3 +16,7 @@
 - Domain Controller Name: DC1
 - Domain DNS IP: 10.0.0.208
 
+## Create OUs
+
+![ous](images/ou.png)
+
