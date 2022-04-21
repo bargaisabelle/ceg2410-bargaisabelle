@@ -29,3 +29,7 @@
 ![finance users](images/fin.png)
 
 ![Hr users](images/hr.png)
+
+## Joining Computers
+
+![add windows server](images/bananas.png)
