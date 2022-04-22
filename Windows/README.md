@@ -49,4 +49,4 @@ Now that they both are set up, connect:
   - Select Okay and your computer will likely ask you to restart.
 
 ![add windows server](images/bananas.png)
-![domain proof](images/domain_banana.png)
+![domain proof](images/domain_bananas.png)
