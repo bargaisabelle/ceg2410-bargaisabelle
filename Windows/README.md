@@ -75,7 +75,7 @@ Prevent execution of programs on computers in Secure OU
 - Select Group Policy Objects
 - Right click and select 'New'
 - Give it a name, save, and select it for editting.
-- 
+- User Configuration > Administrative Templates > System > Don't run specified Windows application > add programs
 
 Disable Guest account login to computers in Secure OU
 
@@ -83,7 +83,7 @@ Disable Guest account login to computers in Secure OU
 - Select Group Policy Objects
 - Right click and select 'New'
 - Give it a name, save, and select it for editting.
-- Computer Config > Policies > Windows Settings > Security Settings > Local Policies > Security Options
+- Computer Configuration > Policies > Windows Settings > Security Settings > Local Policies > Security Options
 and find Accounts: Guest account status Properties and disable the policy setting
 
 Allow server_access to sign on to Servers
