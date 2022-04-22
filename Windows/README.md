@@ -52,3 +52,24 @@ Now that they both are set up, connect:
 
 ![add windows server](images/bananas.png)
 ![domain proof](images/domain_bananas.png)
+
+# OUs & GPOs
+
+## Applying Group Policies
+
+Lock out Workstations after 15 minutes of inactivity.
+Prevent execution of programs on computers in Secure OU
+Disable Guest account login to computers in Secure OU
+Allow server_access to sign on to Servers
+Set Desktop background for Conference computers to company logo.
+Allow users in remote_workstation group to RDP to Workstations
+
+## Managing OUs
+
+Document how to delagate control of an OU to a group
+
+
+which OUs they now delegate
+
+
+and what permissions they were given (and why you think the scope is appropriate)
