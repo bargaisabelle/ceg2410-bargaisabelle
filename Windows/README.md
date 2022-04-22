@@ -88,14 +88,16 @@ Allow server_access to sign on to Servers >> barga Servers
 - Open Group Policy Management on your server
 - Select barga Servers 'Create GPO...'
 - Give it a name, save, and select it for editting.
-- 
+- Computer Configuration > Policies > Windows Settings > Security Settings > Local Policies > User Rights Assignment
+Source: https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/allow-log-on-locally
 
 Set Desktop background for Conference computers to company logo. >> Conference (barga Computers)
 
 - Open Group Policy Management on your server
 - Select Conference > 'Create GPO...'
 - Give it a name, save, and select it for editting.
-- 
+- User Configuration > Administrative Templates > Desktop > Desktop
+Source: https://www.prajwaldesai.com/deploy-desktop-background-wallpaper-using-group-policy/
 
 Allow users in remote_workstation group to RDP to Workstations >> Workstations (barga Computers)
 - Open Group Policy Management on your server
