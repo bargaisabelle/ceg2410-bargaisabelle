@@ -57,11 +57,10 @@ Now that they both are set up, connect:
 
 ## Applying Group Policies
 
-Lock out Workstations after 15 minutes of inactivity.
+Lock out Workstations after 15 minutes of inactivity. >> Workstations (barga Computers)
 
 - Open Group Policy Management on your server
-- Select Group Policy Objects
-- Right click and select 'New'
+- Select Workstations > 'Create GPO...'
 - Give it a name, save, and select it for editting.
 - Access 'Computer Config > Policies > Windows Settings > Security Settings > Local Policies > Security Options
  and find Interactive logon: Machine inactivity limit'
@@ -69,43 +68,38 @@ Lock out Workstations after 15 minutes of inactivity.
  
  Source: https://serverfault.com/questions/79418/enforcing-lock-screen-after-idle-time-via-gpo#:~:text=Create%20a%20new%20GPO%20then,after%20it%20hits%20that%20timer.
 
-Prevent execution of programs on computers in Secure OU
+Prevent execution of programs on computers in Secure OU >> Secure (barga Computers)
 
 - Open Group Policy Management on your server
-- Select Group Policy Objects
-- Right click and select 'New'
+- Select Secure > 'Create GPO...'
 - Give it a name, save, and select it for editting.
 - User Configuration > Administrative Templates > System > Don't run specified Windows application > add programs
 
-Disable Guest account login to computers in Secure OU
+Disable Guest account login to computers in Secure OU >> Secure (barga Computers)
 
 - Open Group Policy Management on your server
 - Select Group Policy Objects
-- Right click and select 'New'
 - Give it a name, save, and select it for editting.
 - Computer Configuration > Policies > Windows Settings > Security Settings > Local Policies > Security Options
 and find Accounts: Guest account status Properties and disable the policy setting
 
-Allow server_access to sign on to Servers
+Allow server_access to sign on to Servers >> barga Servers
 
 - Open Group Policy Management on your server
-- Select Group Policy Objects
-- Right click and select 'New'
+- Select barga Servers 'Create GPO...'
 - Give it a name, save, and select it for editting.
 - 
 
-Set Desktop background for Conference computers to company logo.
+Set Desktop background for Conference computers to company logo. >> Conference (barga Computers)
 
 - Open Group Policy Management on your server
-- Select Group Policy Objects
-- Right click and select 'New'
+- Select Conference > 'Create GPO...'
 - Give it a name, save, and select it for editting.
 - 
 
-Allow users in remote_workstation group to RDP to Workstations
+Allow users in remote_workstation group to RDP to Workstations >> Workstations (barga Computers)
 - Open Group Policy Management on your server
-- Select Group Policy Objects
-- Right click and select 'New'
+- Select Workstations > 'Create GPO...'
 - Give it a name, save, and select it for editting.
 - 
 
