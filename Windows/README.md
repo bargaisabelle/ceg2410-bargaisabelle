@@ -60,6 +60,7 @@ Now that they both are set up, connect:
 
 ### Creating Groups
 
+Where to place groups in the Organizational Units:
 - project_repos_RW: Engineers (barga Users)
 - finance_RW: Finance (barga Users)
 - onboarding_R: HR (barga Users)
