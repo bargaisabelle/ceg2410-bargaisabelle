@@ -1,4 +1,4 @@
-## Setup AD DC
+### Setup AD DC
 
 - Configuring a Windows Server to be a Domain Controller
   - Install Active Directory Domain Services
@@ -16,14 +16,16 @@
 - Domain Controller Name: DC1
 - Domain DNS IP: 10.0.0.208
 
-## Create OUs
+## AD Structure
+
+### Create OUs
 
 ![ous](images/ou.png)
 
 Extra credit: ```bulk-ou.ps1``` and ```org-user.csv``` files
 Powershell Command: .\Desktop\ceg2410-bargaisabelle\Windows\bulk-ou.ps1
 
-## Joining Users
+### Joining Users
 
 ![engineers users](images/eng.png)
 
@@ -33,7 +35,7 @@ Powershell Command: .\Desktop\ceg2410-bargaisabelle\Windows\bulk-ou.ps1
 
 ![Hr users](images/hr.png)
 
-## Joining Computers
+### Joining Computers
 
 First you need your server instances:
   - Create a Windows Server, WinServ1, on AWS. Do not auto assign a public IP and do not allow it to be reassigned.
@@ -56,9 +58,19 @@ Now that they both are set up, connect:
 ![add windows server](images/bananas.png)
 ![domain proof](images/domain_bananas.png)
 
-# OUs & GPOs
+### Creating Groups
 
-## Applying Group Policies
+- project_repos_RW: Engineers (barga Users)
+- finance_RW: Finance (barga Users)
+- onboarding_R: HR (barga Users)
+- server_access: barga Servers
+- dev_eng_admins: barga Users
+- hr_finance_admins: barga Users
+- remote_workstation: Workstation (barga Computers) 
+
+## OUs & GPOs
+
+### Applying Group Policies
 
 Lock out Workstations after 15 minutes of inactivity. >> Workstations (barga Computers)
 
@@ -110,7 +122,7 @@ Allow users in remote_workstation group to RDP to Workstations >> Workstations (
 - Computer Configuration > Administrative Templates > Windows Components > Remote Desktop Services > Remote Desktop Session Host > Connections
 - Source: https://softwarekeep.com/help-center/how-to-enable-remote-desktop-on-windows#:~:text=How%20to%20Enable%2FDisable%20Remote%20Desktop%20Using%20Group%20Policy&text=After%20Local%20Group%20Policy%20Editor,Desktop%20Session%20Host%20%3E%3E%20Connections.&text=Select%20Enabled%20and%20click%20Apply%20if%20you%20want%20to%20enable%20Remote%20Desktop.
 
-## Managing OUs
+### Managing OUs
 
 Document how to delegate control of an OU to a group
 - Select the OU of your choice
