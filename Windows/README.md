@@ -115,7 +115,11 @@ Document how to delegate control of an OU to a group
 - Enter a group name > then select Administrative tasks to delegate
 
 Which OUs they now delegate:
-```hr_finance_admins``` delegate HR and Finance
-```eng_dev_admins``` delegate Engineers and Developers
+- ```hr_finance_admins``` delegate HR and Finance
+- ```eng_dev_admins``` delegate Engineers and Developers
 
-and what permissions they were given (and why you think the scope is appropriate)
+Permissions they were given (and why you think the scope is appropriate)
+- ![permissions for OU/groups](images/permissions.png)
+- Admins should be have all of the necessary capabilities to reset accounts, add/remove, reset user info, add/delete/modify groups, etc
+- It is important that someone has these capabilities otherwise lots of people could lose their accounts and, therefore, important company information
+
