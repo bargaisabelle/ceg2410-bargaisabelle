@@ -65,7 +65,7 @@ Lock out Workstations after 15 minutes of inactivity. >> Workstations (barga Com
 - Access 'Computer Config > Policies > Windows Settings > Security Settings > Local Policies > Security Options
  and find Interactive logon: Machine inactivity limit'
  - Change seconds to 900 and hit 'Apply'
- Source: https://serverfault.com/questions/79418/enforcing-lock-screen-after-idle-time-via-gpo#:~:text=Create%20a%20new%20GPO%20then,after%20it%20hits%20that%20timer.
+ - Source: https://serverfault.com/questions/79418/enforcing-lock-screen-after-idle-time-via-gpo#:~:text=Create%20a%20new%20GPO%20then,after%20it%20hits%20that%20timer.
 
 Prevent execution of programs on computers in Secure OU >> Secure (barga Computers)
 
@@ -73,7 +73,7 @@ Prevent execution of programs on computers in Secure OU >> Secure (barga Compute
 - Select Secure > 'Create GPO...'
 - Give it a name, save, and select it for editting.
 - User Configuration > Administrative Templates > System > Don't run specified Windows application > add programs
-Source: https://www.technipages.com/prevent-users-from-running-certain-programs
+- Source: https://www.technipages.com/prevent-users-from-running-certain-programs
 
 Disable Guest account login to computers in Secure OU >> Secure (barga Computers)
 
@@ -82,7 +82,7 @@ Disable Guest account login to computers in Secure OU >> Secure (barga Computers
 - Give it a name, save, and select it for editting.
 - Computer Configuration > Policies > Windows Settings > Security Settings > Local Policies > Security Options
 and find Accounts: Guest account status Properties and disable the policy setting
-Soruce: https://techexpert.tips/windows/gpo-disable-guest-account/
+- Soruce: https://techexpert.tips/windows/gpo-disable-guest-account/
 
 Allow server_access to sign on to Servers >> barga Servers
 
@@ -90,7 +90,7 @@ Allow server_access to sign on to Servers >> barga Servers
 - Select barga Servers 'Create GPO...'
 - Give it a name, save, and select it for editting.
 - Computer Configuration > Policies > Windows Settings > Security Settings > Local Policies > User Rights Assignment
-Source: https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/allow-log-on-locally
+- Source: https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/allow-log-on-locally
 
 Set Desktop background for Conference computers to company logo. >> Conference (barga Computers)
 
@@ -98,21 +98,24 @@ Set Desktop background for Conference computers to company logo. >> Conference (
 - Select Conference > 'Create GPO...'
 - Give it a name, save, and select it for editting.
 - User Configuration > Administrative Templates > Desktop > Desktop
-Source: https://www.prajwaldesai.com/deploy-desktop-background-wallpaper-using-group-policy/
+- Source: https://www.prajwaldesai.com/deploy-desktop-background-wallpaper-using-group-policy/
 
 Allow users in remote_workstation group to RDP to Workstations >> Workstations (barga Computers)
 - Open Group Policy Management on your server
 - Select Workstations > 'Create GPO...'
 - Give it a name, save, and select it for editting.
 - Computer Configuration > Administrative Templates > Windows Components > Remote Desktop Services > Remote Desktop Session Host > Connections
-Source: https://softwarekeep.com/help-center/how-to-enable-remote-desktop-on-windows#:~:text=How%20to%20Enable%2FDisable%20Remote%20Desktop%20Using%20Group%20Policy&text=After%20Local%20Group%20Policy%20Editor,Desktop%20Session%20Host%20%3E%3E%20Connections.&text=Select%20Enabled%20and%20click%20Apply%20if%20you%20want%20to%20enable%20Remote%20Desktop.
+- Source: https://softwarekeep.com/help-center/how-to-enable-remote-desktop-on-windows#:~:text=How%20to%20Enable%2FDisable%20Remote%20Desktop%20Using%20Group%20Policy&text=After%20Local%20Group%20Policy%20Editor,Desktop%20Session%20Host%20%3E%3E%20Connections.&text=Select%20Enabled%20and%20click%20Apply%20if%20you%20want%20to%20enable%20Remote%20Desktop.
 
 ## Managing OUs
 
-Document how to delagate control of an OU to a group
+Document how to delegate control of an OU to a group
+- Select the OU of your choice
+- Right click > Delegate Control... > Hit 'Next' on the wizard that pops up > Add
+- Enter a group name > then select Administrative tasks to delegate
 
-
-which OUs they now delegate
-
+Which OUs they now delegate:
+```hr_finance_admins``` delegate HR and Finance
+```eng_dev_admins``` delegate Engineers and Developers
 
 and what permissions they were given (and why you think the scope is appropriate)
