@@ -58,11 +58,56 @@ Now that they both are set up, connect:
 ## Applying Group Policies
 
 Lock out Workstations after 15 minutes of inactivity.
+
+- Open Group Policy Management on your server
+- Select Group Policy Objects
+- Right click and select 'New'
+- Give it a name, save, and select it for editting.
+- Access 'Computer Config > Policies > Windows Settings > Security Settings > Local Policies > Security Options
+ and find Interactive logon: Machine inactivity limit'
+ - Change seconds to 900 and hit 'Apply'
+ 
+ Source: https://serverfault.com/questions/79418/enforcing-lock-screen-after-idle-time-via-gpo#:~:text=Create%20a%20new%20GPO%20then,after%20it%20hits%20that%20timer.
+
 Prevent execution of programs on computers in Secure OU
+
+- Open Group Policy Management on your server
+- Select Group Policy Objects
+- Right click and select 'New'
+- Give it a name, save, and select it for editting.
+- 
+
 Disable Guest account login to computers in Secure OU
+
+- Open Group Policy Management on your server
+- Select Group Policy Objects
+- Right click and select 'New'
+- Give it a name, save, and select it for editting.
+- Computer Config > Policies > Windows Settings > Security Settings > Local Policies > Security Options
+and find Accounts: Guest account status Properties and disable the policy setting
+
 Allow server_access to sign on to Servers
+
+- Open Group Policy Management on your server
+- Select Group Policy Objects
+- Right click and select 'New'
+- Give it a name, save, and select it for editting.
+- 
+
 Set Desktop background for Conference computers to company logo.
+
+- Open Group Policy Management on your server
+- Select Group Policy Objects
+- Right click and select 'New'
+- Give it a name, save, and select it for editting.
+- 
+
 Allow users in remote_workstation group to RDP to Workstations
+- Open Group Policy Management on your server
+- Select Group Policy Objects
+- Right click and select 'New'
+- Give it a name, save, and select it for editting.
+- 
 
 ## Managing OUs
 
