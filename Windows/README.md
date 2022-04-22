@@ -39,6 +39,7 @@ First you need your server instances:
   - On this page you will need to decrypt your Private key. This will output the user name 'Administrator' and a password used to access the domain server.
   - Similarly, create a second Windows Server, WinServ2, and decrypt the Windows Password.
   - Connect to each instance in WSL2.
+
 Now that they both are set up, connect:
   - On WinServ2, you will need to access your Preferred DNS Server and update that to WinServ1's private IP.
   - This can be accessed be entering the servers File Explorer
