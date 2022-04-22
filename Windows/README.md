@@ -47,7 +47,8 @@ Now that they both are set up, connect:
   - Select 'Change Settings' towards the bottom of the that page
   - Select 'Change' on the window that pops up
   - Enter the new computer name and the Domain you are trying to connect to
-  - Select Okay and your computer will likely ask you to restart.
+  - Select Okay and you should be prompted for you Administrator username and password saved earlier
+  - your computer will likely ask you to restart
 
 ![add windows server](images/bananas.png)
 ![domain proof](images/domain_bananas.png)
