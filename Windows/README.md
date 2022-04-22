@@ -32,4 +32,21 @@
 
 ## Joining Computers
 
+First you need your server instances:
+  - Create a Windows Server, WinServ1, on AWS. Do not auto assign a public IP and do not allow it to be reassigned.
+  - Take note of the VPC and the private IP created.
+  - Access the instance page and select WinServ1. Select 'Actions', from the drop-down select 'Security' and 'Get Windows Password'
+  - On this page you will need to decrypt your Private key. This will output the user name 'Administrator' and a password used to access the domain server.
+  - Similarly, create a second Windows Server, WinServ2, and decrypt the Windows Password.
+  - Connect to each instance in WSL2.
+Now that they both are set up, connect:
+  - On WinServ2, you will need to access your Preferred DNS Server and update that to WinServ1's private IP.
+  - This can be accessed be entering the servers File Explorer
+  - Right click on 'This PC' and select 'Properties'
+  - Select 'Change Settings' towards the bottom of the that page
+  - Select 'Change' on the window that pops up
+  - Enter the new computer name and the Domain you are trying to connect to
+  - Select Okay and your computer will likely ask you to restart.
+
 ![add windows server](images/bananas.png)
+![domain proof](images/domain_banana.png)
