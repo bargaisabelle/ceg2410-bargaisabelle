@@ -20,6 +20,9 @@
 
 ![ous](images/ou.png)
 
+Extra credit: ```bulk-ou.ps1``` and ```org-users.csv``` files
+Powershell Command: .\Desktop\ceg2410-bargaisabelle\Windows\bulk-ou.ps1
+
 ## Joining Users
 
 ![engineers users](images/eng.png)
